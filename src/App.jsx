@@ -16,7 +16,7 @@ import Commender from "./pages/commender"; // Adjusted to match the file name
 import Formulaire from "./pages/Formulaire";
 import Panier from "./pages/Panier";
 import Dashboard from "./pages/Dashboard";
-
+import Proprs from "./pages/Proprs";
 function App() {
   return (
     <Router>
@@ -66,6 +66,7 @@ function App() {
           <Route path="/formulaire" element={<Formulaire />} />
           <Route path="/panier" element={<Panier />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/Proprs" element={<Proprs />} />
           {/* Add more routes as needed */}
         </Routes>
 
