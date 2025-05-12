@@ -98,7 +98,7 @@ function Proprs() {
 
       <div className=" text-center ">
         <h2 className="text-4xl font-bold mb-10 hover:-blue-600 transition duration-200 pb-1s">Ce que nous offrons</h2>
-   <div className="justify-center border-2 p-24 rounded-xl shadow-3xl text-black space-y-6 font-bold text-3xl hover:border-blue-600 transition duration-200 flex flex-col items-center text-center" style={{ backgroundColor: "rgba(66, 192, 250, 0.28)" }}>
+   <div className="justify-center border-2 p-24 rounded-xl shadow-3xl text-black space-y-6 font-bold text-3xl <p className='text-black font-bold' flex flex-col items-center text-center" style={{ backgroundColor: "rgba(66, 192, 250, 0.28)" }}>
   <Link to="/produit1" className="block border-b-2 border-transparent hover:border-blue-500 transition-colors duration-200 w-fit">
      Compléments alimentaires
   </Link>
