@@ -63,7 +63,7 @@ out/
 .nuxt/
 .serverless/
 .vuepress/dist/
-public/
+
 static/
 
 # Coverage directories
