@@ -12,7 +12,7 @@ import Registration from './components/Registration/Registration' ;
 import Communaute from "./pages/communaute";
 import Communaute2 from "./pages/Communaute2";
 import FAQ from "./pages/FAQ";
-import Commender from "./pages/commender"; // Adjusted to match the file name
+import Commender from "./pages/Commender"; // Adjusted to match the file name
 import Formulaire from "./pages/Formulaire";
 import Panier from "./pages/Panier";
 import Dashboard from "./pages/Dashboard";

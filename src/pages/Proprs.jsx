@@ -1,11 +1,12 @@
 import React from 'react'
-import heroBgImage from '/images/coachs1-hero.png'
+import proprs from '/images/proprs.svg';
 import Header from '../components/Header2';
 import Footer from '../components/Footer';
 import ButtonPrimary from '../components/buttonPrimary';
 import { Link } from 'react-router-dom';
 import { MdKeyboardArrowRight } from "react-icons/md";
-// import produit1 from './Produits1';  
+
+
 
 
 function Proprs() {
@@ -14,7 +15,7 @@ function Proprs() {
       <div
         className=" pb-43"
         style={{
-          backgroundImage: `url(${heroBgImage})`,
+          backgroundImage: `url(${proprs})`,
           backgroundSize: "cover",
           backgroundPosition: "top center",
         }}
@@ -97,8 +98,8 @@ function Proprs() {
       </div>
 
       <div className=" text-center ">
-        <h2 className="text-4xl font-bold mb-10 hover:-blue-600 transition duration-200 pb-1s">Ce que nous offrons</h2>
-   <div className="justify-center border-2 p-24 rounded-xl shadow-3xl text-black space-y-6 font-bold text-3xl <p className='text-black font-bold' flex flex-col items-center text-center" style={{ backgroundColor: "rgba(66, 192, 250, 0.28)" }}>
+        <h2 className=" text-4xl font-bold mb-10  pb-1s">Ce que nous offrons</h2>
+  <div className="justify-center border-2 p-24 rounded-xl shadow-3xl text-black space-y-6 font-bold text-3xl <p className='text-black font-bold' flex flex-col items-center text-center" style={{ backgroundColor: "rgba(66, 192, 250, 0.28)" }}>
   <Link to="/produit1" className="block border-b-2 border-transparent hover:border-blue-500 transition-colors duration-200 w-fit">
      Compléments alimentaires
   </Link>

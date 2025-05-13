@@ -2,14 +2,14 @@ import React from 'react'
 import ButtonPrimary from '../components/buttonPrimary'
 import Footer from '../components/Footer'
 import OrderSummaryPage from '../components/SubtotalDisplay'
-import Header from '../components/Header'
+import Header2 from '../components/Header2'
 import SubtotalDisplay from '../components/SubtotalDisplay'
 
 function Commender  ()  {
   return (
     
 <div>
-      <Header  isConnected={true}/>
+      <Header2  isConnected={true}/>
   <div  
         style={{
           height: '123px',

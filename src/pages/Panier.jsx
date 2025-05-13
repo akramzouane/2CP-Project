@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from '../components/Header';
+import Header2 from '../components/Header2';
 import { Link } from 'react-router-dom';
 import { Trash2, X, Plus, Minus } from 'lucide-react';
 import useCartStore from '../store/cartStore';
@@ -21,7 +21,7 @@ function Panier() {
   const totalPrice = getTotalPrice() || 0;
   return (
     <div className="min-h-screen bg-[#0A0A0B]">
-      <Header isConnected={true} />
+      <Header2 isConnected={true} />
       <div className="max-w-[1300px] mx-auto px-4 py-8">
         <h1 className="text-4xl font-bold mb-12 text-center">PANIER D'ACHATS</h1>          
         <div className="flex justify-between items-center mb-8">          

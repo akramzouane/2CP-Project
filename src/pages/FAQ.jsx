@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from '../components/Header2';
+import Header2 from '../components/Header2';
 import Footer from '../components/Footer';
 import CartFAQ from '../components/CartFAQ';
 
@@ -15,7 +15,7 @@ function FAQ() {
           backgroundPosition: "top center",
         }}
       >
-        <Header isConnected={true}></Header>
+        <Header2 isConnected={true}></Header2>
       
       </div>
 

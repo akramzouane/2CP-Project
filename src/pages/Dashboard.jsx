@@ -1,9 +1,20 @@
 import { useState } from "react"
+import { Link } from "react-router-dom"
 import Footer from '../components/Footer'
+import Logo from '../components/Logo'
+
+// Menu icon URLs
+const menuIcons = {
+  vector: "/icons/Vector.png",
+  muscle: "/icons/Muscle.png",
+  dumbble: "/icons/solar_dumbbells-bold.png",
+  inconnu: "/icons/Inconnu.png",
+  logo: "/icons/logo-icon.svg"
+}
 
 export default function Dashboard() {
   // State for menu toggle
-  const [menuOpen, setMenuOpen] = useState(false)
+  const [showMenu, setShowMenu] = useState(false)
 
   // State for form data
   const [productForm, setProductForm] = useState({ name: "", price: "", stock: "" })
@@ -124,49 +135,86 @@ export default function Dashboard() {
     <div className="min-h-screen bg-[#0a1525] text-white">
       {/* Header */}
       <header className="flex justify-between items-center p-4">
-        <div className="flex items-center">
-          <span className="text-white text-2xl font-bold">ATHEL</span>
-          <span className="text-teal-400 text-2xl font-bold">✿</span>
+        <div className="scale-75 sm:scale-100">
+          <Logo />
         </div>
-        <button onClick={() => setMenuOpen(!menuOpen)} className="text-white focus:outline-none">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
+        <div className="relative ml-4">
+          <button 
+            onClick={() => setShowMenu(!showMenu)}
+            aria-label="Menu"
+            className="p-2 hover:bg-gray-700 rounded-full transition-colors"
           >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
-
-        {/* Mobile Menu */}
-        {menuOpen && (
-          <div className="absolute top-16 right-4 bg-[#142033] rounded-lg shadow-lg z-50 w-48">
-            <ul className="py-2">
-              <li>
-                <a href="#" className="block px-4 py-2 hover:bg-[#1a2c42]">
-                  Dashboard
-                </a>
-              </li>
-              <li>
-                <a href="#" className="block px-4 py-2 hover:bg-[#1a2c42]">
-                  Produits
-                </a>
-              </li>
-              <li>
-                <a href="#" className="block px-4 py-2 hover:bg-[#1a2c42]">
-                  Coachs
-                </a>
-              </li>
-              <li>
-                <a href="#" className="block px-4 py-2 hover:bg-[#1a2c42]">
-                  Salles de Sport
-                </a>
-              </li>
-            </ul>
-          </div>
-        )}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-8 w-8 text-white"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+          
+          {showMenu && (
+            <div className="fixed inset-0 w-screen h-screen bg-gray-800 z-50" style={{
+                minHeight: '100vh',
+                display: 'flex',
+                flexDirection: 'column',
+            }}>               <div className="flex justify-between items-center p-6">
+                <img src={menuIcons.logo} alt="Logo" className="h-12" />
+                <button 
+                  onClick={() => setShowMenu(false)}
+                  className="p-2 hover:bg-gray-700 rounded-full transition-colors"
+                >
+                  <svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    className="h-8 w-8 text-white" 
+                    fill="none" 
+                    viewBox="0 0 24 24" 
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+              
+              <nav className="flex-1 flex flex-col justify-center px-6">
+                <div className="space-y-6">
+                  {[
+                    { to: "/produits1", icon: menuIcons.vector, text: "Produits" },
+                    { to: "/coachs1", icon: menuIcons.muscle, text: "Coachs" },
+                    { to: "/salles1", icon: menuIcons.dumbble, text: "Salle de Sport" },
+                    { to: "/communaute", icon: menuIcons.inconnu, text: "Communauté" }
+                  ].map((item) => (
+                    <Link 
+                      key={item.to}
+                      to={item.to}
+                      className="flex items-center gap-4 p-4 rounded-lg hover:bg-gray-700 transition-colors text-white no-underline text-lg"
+                      onClick={() => setShowMenu(false)}
+                    >
+                      <img src={item.icon} alt="" className="w-8 h-8" />
+                      <span className="font-medium">{item.text}</span>
+                    </Link>
+                  ))}
+                </div>
+              </nav>
+              
+              <div className="p-6 border-t border-gray-700">
+                <Link 
+                  to="/connexion" 
+                  className="block w-full py-3 px-4 text-white font-bold rounded-lg text-center hover:opacity-90 transition-opacity no-underline"
+                  style={{
+                    background: 'linear-gradient(to right, #42FACF, #42C0FA)',
+                    color: 'black'
+                  }}
+                  onClick={() => setShowMenu(false)}
+                >
+                  Inscription
+                </Link>
+              </div>
+            </div>
+          )}
+        </div>
       </header>
 
       <main className="container mx-auto px-4 pb-8">
